@@ -107,7 +107,7 @@ def get_predictive_insights(
 
 @router.get("/revenue-analysis")
 def get_revenue_analysis(
-    period: str = Query("30d", regex="^(7d|30d|90d|1y)$", description="Analysis period"),
+    period: str = Query("30d", pattern="^(7d|30d|90d|1y)$", description="Analysis period"),
     current_user: User = Depends(verify_admin_access),
     db: Session = Depends(get_db)
 ):
@@ -244,7 +244,7 @@ def get_performance_summary(
 
 @router.get("/export/csv")
 def export_data_csv(
-    report_type: str = Query(..., regex="^(revenue|bookings|customers)$"),
+    report_type: str = Query(..., pattern="^(revenue|bookings|customers)$"),
     days: int = Query(30, ge=1, le=365),
     current_user: User = Depends(verify_admin_access),
     db: Session = Depends(get_db)

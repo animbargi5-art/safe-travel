@@ -37,10 +37,16 @@ app.include_router(reporting.router)
 app.include_router(waitlist.router)
 app.include_router(health.router)
 
-# CORS
+# CORS - Updated for mobile access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:3000", 
+        "http://localhost:5173",
+        "http://192.168.31.230:5173",  # Mobile access
+        "http://192.168.31.230:3000",  # Alternative port
+        "*"  # Allow all origins for development (remove in production)
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

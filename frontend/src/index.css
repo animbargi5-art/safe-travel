@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import mobile-specific styles */
+@import './mobile/mobile.css';
+
 /* -------------------------------
    🌸 Global Design Tokens
 -------------------------------- */
