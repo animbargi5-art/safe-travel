@@ -1,0 +1,37 @@
+✈️ {{ company_name }} - Booking Confirmation
+
+Namaste, {{ passenger_name }}!
+
+✅ Your booking has been confirmed with perfect timing and dharmic alignment.
+
+BOOKING DETAILS
+===============
+Booking ID: #{{ booking.id }}
+Passenger: {{ passenger_name }}
+Route: {{ flight.from_city }} → {{ flight.to_city }}
+Seat: {{ seat.seat_number }} ({{ seat.seat_class }} Class)
+Departure: {{ flight.departure_time.strftime('%B %d, %Y at %I:%M %p') if flight.departure_time else 'TBD' }}
+Total Paid: ${{ "%.2f"|format(price) }}
+
+🧘 DHARMIC WISDOM
+==================
+"Every journey begins with a single step taken with clear intention. Your path unfolds exactly as it should, bringing you closer to your destination with grace and perfect timing."
+
+IMPORTANT REMINDERS
+==================
+• Arrive at the airport at least 2 hours before domestic flights
+• Arrive at the airport at least 3 hours before international flights
+• Keep this confirmation email for your records
+• Contact us if you need any assistance
+
+NEED HELP?
+==========
+Our mindful support team is here to assist you:
+Email: {{ support_email }}
+
+Thank you for choosing {{ company_name }} for your dharma-aligned journey.
+Safe travels and may your path be filled with wisdom and joy.
+
+---
+© {{ current_year }} {{ company_name }}. All rights reserved.
+This email was sent to {{ booking.passenger_email }}

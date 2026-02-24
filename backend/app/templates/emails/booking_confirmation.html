@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        .confirmation-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .booking-details {
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            font-size: 18px;
+            color: #1e40af;
+        }
+        .detail-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+        .detail-value {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .flight-info {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .route {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .dharma-message {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin: 24px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #92400e;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .support-info {
+            background-color: #eff6ff;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">✈️ {{ company_name }}</div>
+            <div class="confirmation-badge">
+                ✅ Booking Confirmed
+            </div>
+        </div>
+
+        <h1 style="color: #1e40af; text-align: center; margin-bottom: 10px;">
+            Namaste, {{ passenger_name }}!
+        </h1>
+        
+        <p style="text-align: center; color: #64748b; font-size: 16px;">
+            Your journey has been confirmed with perfect timing and dharmic alignment.
+        </p>
+
+        <div class="flight-info">
+            <div class="route">{{ flight.from_city }} → {{ flight.to_city }}</div>
+            <div>Departure: {{ flight.departure_time.strftime('%B %d, %Y at %I:%M %p') if flight.departure_time else 'TBD' }}</div>
+        </div>
+
+        <div class="booking-details">
+            <h3 style="margin-top: 0; color: #1e40af;">Booking Details</h3>
+            
+            <div class="detail-row">
+                <span class="detail-label">Booking ID:</span>
+                <span class="detail-value">#{{ booking.id }}</span>
+            </div>
+            
+            <div class="detail-row">
+                <span class="detail-label">Passenger:</span>
+                <span class="detail-value">{{ passenger_name }}</span>
+            </div>
+            
+            <div class="detail-row">
+                <span class="detail-label">Seat:</span>
+                <span class="detail-value">{{ seat.seat_number }} ({{ seat.seat_class }} Class)</span>
+            </div>
+            
+            <div class="detail-row">
+                <span class="detail-label">Flight:</span>
+                <span class="detail-value">{{ flight.from_city }} to {{ flight.to_city }}</span>
+            </div>
+            
+            <div class="detail-row">
+                <span class="detail-label">Departure:</span>
+                <span class="detail-value">{{ flight.departure_time.strftime('%B %d, %Y at %I:%M %p') if flight.departure_time else 'TBD' }}</span>
+            </div>
+            
+            <div class="detail-row">
+                <span class="detail-label">Total Paid:</span>
+                <span class="detail-value">${{ "%.2f"|format(price) }}</span>
+            </div>
+        </div>
+
+        <div class="dharma-message">
+            <strong>🧘 Dharmic Wisdom:</strong><br>
+            "Every journey begins with a single step taken with clear intention. Your path unfolds exactly as it should, bringing you closer to your destination with grace and perfect timing."
+        </div>
+
+        <div class="support-info">
+            <h4 style="margin-top: 0; color: #1e40af;">Need Assistance?</h4>
+            <p style="margin-bottom: 10px;">Our mindful support team is here to help with any questions about your journey.</p>
+            <a href="mailto:{{ support_email }}" class="btn">Contact Support</a>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <p style="color: #64748b;">
+                <strong>Important:</strong> Please arrive at the airport at least 2 hours before domestic flights and 3 hours before international flights.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for choosing {{ company_name }} for your dharma-aligned journey.</p>
+            <p>Safe travels and may your path be filled with wisdom and joy.</p>
+            <p style="margin-top: 20px;">
+                © {{ current_year }} {{ company_name }}. All rights reserved.<br>
+                This email was sent to {{ booking.passenger_email }}
+            </p>
+        </div>
+    </div>
+</body>
+</html>

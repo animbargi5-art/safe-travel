@@ -1,0 +1,32 @@
+{{ company_name }} - Payment Receipt
+
+Thank you, {{ passenger_name }}! Your payment has been processed successfully.
+
+PAYMENT SUMMARY:
+Amount: ${{ "%.2f"|format(amount) }} {{ currency }}
+Payment completed on {{ payment_date.strftime('%B %d, %Y at %I:%M %p') if payment_date else 'Recently' }}
+
+PAYMENT DETAILS:
+- Payment ID: #{{ payment.id }}
+- Amount: ${{ "%.2f"|format(amount) }} {{ currency }}
+- Payment Method: Credit Card
+- Status: ✅ Completed
+- Transaction Date: {{ payment_date.strftime('%B %d, %Y at %I:%M %p') if payment_date else 'Recently' }}
+
+BOOKING INFORMATION:
+- Booking ID: #{{ booking.id }}
+- Flight: {{ flight.from_city }} → {{ flight.to_city }}
+- Seat: {{ seat.seat_number }} ({{ seat.seat_class }} Class)
+- Passenger: {{ passenger_name }}
+
+GRATITUDE & ABUNDANCE:
+"When intention aligns with action, abundance flows naturally. Your investment in this journey creates ripples of positive energy that extend far beyond the destination."
+
+Keep this receipt for your records. If you need to request a refund or have questions about this payment, please contact our support team.
+
+---
+This payment receipt confirms your transaction with {{ company_name }}.
+Your journey continues with gratitude and mindful intention.
+
+© {{ current_year }} {{ company_name }}. All rights reserved.
+Receipt sent to {{ booking.passenger_email }}

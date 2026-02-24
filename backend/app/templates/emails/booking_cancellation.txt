@@ -1,0 +1,43 @@
+{{ company_name }} - Booking Cancelled
+
+Hello {{ passenger_name }},
+
+Your booking has been cancelled as requested.
+
+{% if has_refund %}
+REFUND PROCESSED:
+Amount: ${{ "%.2f"|format(refund.amount) }} {{ refund.currency or 'USD' }}
+Status: Processed
+Timeline: 3-5 business days to appear in your account
+{% endif %}
+
+CANCELLED BOOKING DETAILS:
+- Booking ID: #{{ booking_id }}
+- Flight: {{ flight.from_city }} → {{ flight.to_city }}
+- Seat: {{ seat.seat_number }} ({{ seat.seat_class }} Class)
+- Passenger: {{ passenger_name }}
+{% if flight.departure_time %}
+- Original Departure: {{ flight.departure_time.strftime('%B %d, %Y at %I:%M %p') }}
+{% endif %}
+
+CANCELLATION DETAILS:
+- Cancellation Date: {{ booking.updated_at.strftime('%B %d, %Y at %I:%M %p') if booking.updated_at else 'Today' }}
+- Status: Cancelled
+
+{% if has_refund %}
+REFUND INFORMATION:
+Your refund of ${{ "%.2f"|format(refund.amount) }} has been processed and will appear in your original payment method within 3-5 business days. You will receive a separate email confirmation once the refund is complete.
+{% else %}
+WHAT'S NEXT:
+Your booking has been cancelled. If you paid for this booking and are eligible for a refund, it will be processed separately. For questions about refunds or cancellation policies, please contact our support team.
+{% endif %}
+
+ACCEPTANCE & FLOW:
+"Sometimes the path changes, and that's perfectly natural. Trust that this shift in plans opens space for new opportunities and experiences that align with your highest good."
+
+We're here to help if you have any questions about this cancellation.
+
+---
+{{ company_name }}
+{{ support_email }}
+© {{ current_year }} {{ company_name }}. All rights reserved.

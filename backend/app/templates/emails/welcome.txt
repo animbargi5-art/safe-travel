@@ -1,0 +1,46 @@
+{{ company_name }} - Welcome to Your Dharma-Aligned Journey
+
+Namaste, {{ user_name }}! 🙏
+
+Welcome to {{ company_name }}! We're honored to be part of your journey toward conscious, intentional travel experiences.
+
+WHAT AWAITS YOU:
+
+🤖 AI-Powered Seat Selection
+Let our intelligent system find the perfect seat based on your preferences and travel needs
+
+✈️ Seamless Booking Experience  
+Book flights with ease through our intuitive, dharma-aligned booking process
+
+💳 Secure Payments
+Safe, encrypted payment processing with instant confirmation and receipts
+
+📧 Mindful Notifications
+Thoughtful reminders and updates that keep you informed without overwhelming
+
+🧘 Conscious Travel Philosophy
+Every feature designed with intention, mindfulness, and respect for your journey
+
+READY TO BEGIN?
+
+Your account is all set up! Here's how to get started:
+
+1. Search for flights using our intelligent search system
+2. Let AI choose your seat or select manually from our seat map  
+3. Complete your booking with secure payment processing
+4. Receive confirmations and helpful travel reminders
+
+YOUR TRAVEL INTENTION:
+"Travel is not just about reaching a destination—it's about the consciousness you bring to each moment of the journey. May every flight you book through Safe Travel be an opportunity for growth, connection, and mindful exploration."
+
+Start your journey: {{ website_url }}
+
+Questions or need help? Our support team is here to assist you with compassion and expertise.
+
+---
+Welcome to the {{ company_name }} community, {{ user_name }}!
+Your mindful journey begins with a single conscious choice.
+
+© {{ current_year }} {{ company_name }}. All rights reserved.
+Account: {{ user.email }}
+Support: {{ support_email }}

@@ -1,0 +1,30 @@
+{{ company_name }} - Flight Reminder
+
+Hello {{ passenger_name }},
+
+Your flight departs in {{ hours_before }} hours!
+
+FLIGHT DETAILS:
+- Booking ID: #{{ booking.id }}
+- Flight: {{ flight.flight_number or 'ST' + booking.id|string }}
+- Route: {{ flight.from_city }} → {{ flight.to_city }}
+- Seat: {{ seat.seat_number }} ({{ seat.seat_class }} Class)
+- Departure: {{ departure_time.strftime('%I:%M %p on %B %d, %Y') if departure_time else 'Soon' }}
+
+PRE-FLIGHT CHECKLIST:
+✅ Check-in online (if not already done)
+✅ Verify your identification documents
+✅ Review baggage allowances and restrictions
+✅ Arrive at airport 2 hours early for domestic flights
+✅ Check current weather at your destination
+✅ Confirm ground transportation arrangements
+
+MINDFUL TRAVEL:
+"Every journey begins with a single step taken in awareness. May your travels be safe, your connections meaningful, and your arrival filled with gratitude for the path that brought you there."
+
+Safe travels!
+
+---
+{{ company_name }}
+{{ support_email }}
+© {{ current_year }} {{ company_name }}. All rights reserved.

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Safe Travel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        .welcome-badge {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .welcome-message {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .features {
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 16px 0;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+        .feature-content {
+            flex: 1;
+        }
+        .feature-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+        .feature-description {
+            color: #64748b;
+            font-size: 14px;
+        }
+        .getting-started {
+            background-color: #ecfdf5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .dharma-message {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #92400e;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🙏 {{ company_name }}</div>
+            <div class="welcome-badge">
+                Welcome Aboard
+            </div>
+        </div>
+
+        <h1 style="color: #1e40af; text-align: center; margin-bottom: 10px;">
+            Welcome to Your Dharma-Aligned Journey
+        </h1>
+        
+        <div class="welcome-message">
+            <h2 style="margin-top: 0; font-size: 24px;">Namaste, {{ user_name }}! 🙏</h2>
+            <p style="font-size: 16px; margin-bottom: 0;">
+                Your mindful travel adventure begins here. We're honored to be part of your journey toward conscious, intentional travel experiences.
+            </p>
+        </div>
+
+        <div class="features">
+            <h3 style="margin-top: 0; color: #1e40af; text-align: center;">✨ What Awaits You</h3>
+            
+            <div class="feature-item">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-content">
+                    <div class="feature-title">AI-Powered Seat Selection</div>
+                    <div class="feature-description">Let our intelligent system find the perfect seat based on your preferences and travel needs</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">✈️</div>
+                <div class="feature-content">
+                    <div class="feature-title">Seamless Booking Experience</div>
+                    <div class="feature-description">Book flights with ease through our intuitive, dharma-aligned booking process</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">💳</div>
+                <div class="feature-content">
+                    <div class="feature-title">Secure Payments</div>
+                    <div class="feature-description">Safe, encrypted payment processing with instant confirmation and receipts</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">📧</div>
+                <div class="feature-content">
+                    <div class="feature-title">Mindful Notifications</div>
+                    <div class="feature-description">Thoughtful reminders and updates that keep you informed without overwhelming</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">🧘</div>
+                <div class="feature-content">
+                    <div class="feature-title">Conscious Travel Philosophy</div>
+                    <div class="feature-description">Every feature designed with intention, mindfulness, and respect for your journey</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="getting-started">
+            <h3 style="margin-top: 0; color: #065f46;">🚀 Ready to Begin?</h3>
+            <p>Your account is all set up! Here's how to get started:</p>
+            <ol style="color: #065f46; margin: 16px 0;">
+                <li><strong>Search for flights</strong> using our intelligent search system</li>
+                <li><strong>Let AI choose your seat</strong> or select manually from our seat map</li>
+                <li><strong>Complete your booking</strong> with secure payment processing</li>
+                <li><strong>Receive confirmations</strong> and helpful travel reminders</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="{{ website_url }}" class="cta-button">
+                Start Your Journey
+            </a>
+        </div>
+
+        <div class="dharma-message">
+            <strong>🌟 Your Travel Intention:</strong><br>
+            "Travel is not just about reaching a destination—it's about the consciousness you bring to each moment of the journey. May every flight you book through Safe Travel be an opportunity for growth, connection, and mindful exploration."
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <p style="color: #64748b;">
+                <strong>Questions or need help?</strong><br>
+                Our support team is here to assist you with compassion and expertise.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Welcome to the {{ company_name }} community, {{ user_name }}!</p>
+            <p>Your mindful journey begins with a single conscious choice.</p>
+            <p style="margin-top: 20px;">
+                © {{ current_year }} {{ company_name }}. All rights reserved.<br>
+                Account created for {{ user.email }}<br>
+                Need help? Contact us at {{ support_email }}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
