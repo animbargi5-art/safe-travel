@@ -9,8 +9,16 @@ import logging
 from datetime import datetime, timedelta
 from typing import Dict, Any, List, Optional, Tuple
 from dataclasses import dataclass
-import speech_recognition as sr
 from sqlalchemy.orm import Session
+
+# Optional speech recognition import
+try:
+    import speech_recognition as sr
+    SPEECH_RECOGNITION_AVAILABLE = True
+except ImportError:
+    sr = None
+    SPEECH_RECOGNITION_AVAILABLE = False
+    logging.warning("speech_recognition not available. Voice features will use text input only.")
 
 logger = logging.getLogger(__name__)
 
@@ -321,6 +329,10 @@ class VoiceBookingService:
     
     def _speech_to_text(self, audio_data: bytes) -> str:
         """Convert speech audio to text"""
+        if not SPEECH_RECOGNITION_AVAILABLE:
+            logger.warning("Speech recognition not available. Please install speech_recognition package.")
+            return ""
+        
         try:
             # Initialize speech recognition
             r = sr.Recognizer()

@@ -380,3 +380,15 @@ async def booking_expiration_monitor(db: Session):
         except Exception as e:
             logger.error(f"Error in booking expiration monitor: {e}")
             await asyncio.sleep(300)
+
+# Global notification service instance
+_notification_service = None
+
+def get_notification_service() -> NotificationService:
+    """Get or create notification service instance"""
+    global _notification_service
+    if _notification_service is None:
+        from app.database import SessionLocal
+        db = SessionLocal()
+        _notification_service = NotificationService(db)
+    return _notification_service
